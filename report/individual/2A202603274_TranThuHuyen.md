@@ -29,7 +29,7 @@ Phần cần giảng viên làm rõ: ranh giới van/minivan khi nhìn từ phí
   - drive_027.jpg, drive_029.jpg, drive_041.jpg, drive_042.jpg, drive_048.jpg
 - **Lỗi phát hiện khi rà và cách sửa:**
   - drive_001.jpg: xe van ở phía xa gần quán ban đầu chưa thấy để gán, update đã gán nhãn xe van.
-  - drive_008, drive_009, drive_011, drive_024, drive_027, drive_029, drive_041, drive_042, drive_048: xe bus có chiếu dài và rộng không khớp/ sát với box rectangle, chỉnh sửa bằng cách rotate box.
+  - drive_008, drive_009, drive_011, drive_024, drive_027, drive_029, drive_041, drive_042, drive_048: xe bus có chiều dài và rộng không khớp/ sát với box rectangle, chỉnh sửa bằng điều chỉnh lại tọa độ box cho sát thân xe và resize box cho khớp phần nhìn thấy.
 - **Commit khóa nhãn ban đầu:** Commit 90162cd.
 
 ## 4. Gold QC và rework
@@ -56,8 +56,7 @@ Phần cần giảng viên làm rõ: ranh giới van/minivan khi nhìn từ phí
 | drive_028 | 3 | 17 | 3 | 14 |
 | drive_031 | 14 | 33 | 12 | 21 |
 
-Recall = 0.7473 cho thấy 165 xe trong gold chưa được bắt (FN). Hướng rework: bỏ bớt box thừa ở các ảnh đông xe xa (giảm FP) và bổ sung xe còn thiếu (giảm FN).
-
+Recall = 0.7473 cho thấy 165 xe trong gold chưa được bắt (FN). Không thực hiện rework do hết thời gian buổi lab, nhãn nộp là bản ban đầu (commit 90162cd). 
 
 ## 5. Kết quả YOLO
 
@@ -142,7 +141,7 @@ Ma trận nhầm lẫn cho thấy `truck` hay bị phân loại thành `car`. Đ
 | Bước/thời điểm | Lỗi/khó khăn quan sát | Cách đã thử | Kết quả |
 |---|---|---|---|
 | Annotation | Khó phân biệt truck nhỏ và car/van nhìn từ xa hoặc góc nghiêng | Đối chiếu với định nghĩa class trong guideline. Hỏi lab coach. | Tuỳ từng bức ảnh, có ảnh bỏ, có ảnh sẽ dựa theo sự nhìn nhận của lab coach để gán nhãn đúng. |
-| Self-QC | Checker kiểm định dạng nhưng không phát hiện sai class hoặc box không sát | Rà thêm bằng mắt ít nhất 10 ảnh | Kết quả cụ thể cần bổ sung |
+| Self-QC | Checker kiểm định dạng nhưng không phát hiện sai class hoặc box không sát | Rà thêm bằng mắt ít nhất 10 ảnh | 1-2 ảnh có box bị thiếu, đã sửa trước khi commit|
 | YOLO train | Loss epoch đầu dao động mạnh (cls_loss từ ~4.7 về ~0.72) | Giữ nguyên default lr, warmup 3 epoch | Model hội tụ tốt sau epoch 30 |
 
 ## 7. Tự đánh giá theo rubric

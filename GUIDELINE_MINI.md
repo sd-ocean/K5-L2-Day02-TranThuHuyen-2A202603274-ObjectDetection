@@ -1,7 +1,5 @@
 # Mini guideline — bài làm cá nhân
 
-> Điền nội dung này trước khi bắt đầu gán nhãn. Giữ lại các quyết định sau khi self-QC.
-
 ## Định nghĩa lớp
 
 | Lớp | Định nghĩa của bạn | Ví dụ/điểm phân biệt |
@@ -22,6 +20,6 @@
 
 | Ảnh | Tình huống | Quyết định cuối | Lý do theo schema |
 | --- | --- | --- | --- |
-| `drive_...` | | | |
-| `drive_...` | | | |
-| `drive_...` | | | |
+| `drive_041` | Xe truck cứu hộ có đầu/ mũi xe giống xe van. | Gán nhãn xe truck. | Mặc dù mũi xe giống van nhưng đuôi xe vuông, không mang thùng nhưng có chở đồ. |
+| `drive_003` | Xe màu đen đứng hàng đầu làn từ góc trái dưới đi lên, giữa xe đỏ và xe đen, có nét giống xe van vì hơi cao hơn xe car khác, nhưng cũng giống xe car. | Bỏ qua, không gán nhãn. | Do ảnh cũng khá mờ, xe đó còn bị che bởi xe car đỏ, nên không chắc chắn đó là car hay minivan. |
+| `drive_049` | Xe bus hoặc là xe truck ở giữa góc trên ảnh, bên cạnh 3 xe car, có đầu cũng giống xe bus, nhưng đuôi xe giống như đang chở thùng của truck. | Gán nhãn truck. | Truck có nhiều xe mang đầu/ mũi xe giống bus khi nhìn xa, nhưng đuôi xe mang thùng lớn thì thường là truck. |

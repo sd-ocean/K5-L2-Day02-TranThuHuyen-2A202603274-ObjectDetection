@@ -43,7 +43,7 @@ Phần cần giảng viên làm rõ: ranh giới van/minivan khi nhìn từ phí
 | Recall | 0.7473 | — |
 | F1 | 0.6025 | — |
 | mean_iou_of_matches | 0.8501 | — |
-| passed | ❌ false (cần F1 ≥ 0.80 và mean IoU ≥ 0.70) | — |
+| passed | Chưa đạt (cần F1 ≥ 0.80 và mean IoU ≥ 0.70) | — |
 
 **Phân tích:** mean IoU = 0.8501 đã vượt ngưỡng 0.70, box đang khớp vị trí tốt. Vấn đề là F1 = 0.6025 do FP rất cao (479): số box vẽ ra nhiều hơn gold đáng kể. Nhìn vào per-image, những ảnh FP nặng nhất:
 
